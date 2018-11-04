@@ -1,0 +1,28 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: zuul
+  rabbitmq:
+    host: 193.112.58.253
+  zipkin:
+    base-url: http://193.112.58.253:9005
+    sender:
+      type: rabbit
+  sleuth:
+    sampler:
+      probability: 1.0
+eureka:
+  client:
+    service-url:
+      defaultZone: http://kang:12345@localhost:9000/eureka/
+zuul:
+  routes:
+    user:
+      path: /api/**
+      serviceId: user-service
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

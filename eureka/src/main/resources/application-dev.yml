@@ -1,0 +1,28 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: eureka
+  security:
+    user:
+      password: 12345
+      name: kang
+
+eureka:
+  client:
+    fetch-registry: false #是否从Eureka Server获取注册信息，单节点不需要同步其他节点数据
+    register-with-eureka: false #是否将自己注册到Eureka Server
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka/
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  server:  #配置属性，但由于 Eureka 自我保护模式以及心跳周期长的原因，经常会遇到 Eureka Server 不剔除已关停的节点的问题
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 5000
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

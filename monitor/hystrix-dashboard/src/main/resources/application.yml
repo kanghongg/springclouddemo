@@ -1,0 +1,14 @@
+server:
+  port: 9003
+spring:
+  application:
+    name: hystrixDashboard
+eureka:
+  client:
+    service-url:
+      defaultZone: http://kang:12345@localhost:9000/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream

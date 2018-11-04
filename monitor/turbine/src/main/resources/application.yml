@@ -1,0 +1,13 @@
+server:
+  port: 9004
+spring:
+  application:
+    name: turbine
+  rabbitmq:
+    host: 193.112.58.253
+eureka:
+  client:
+    service-url:
+      defaultZone: http://kang:12345@localhost:9000/eureka/
+#turbine:
+#  app-config: zuul
