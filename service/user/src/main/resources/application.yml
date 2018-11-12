@@ -4,8 +4,8 @@ spring:
   application:
     name: user-service
   datasource:
-    url: jdbc:mysql://localhost:3306/cloud_demo?useSSL=false
-    password: root
+    url: jdbc:mysql://193.112.58.253:2306/cloud_demo?useSSL=false
+    password: Khl@321
     username: root
     driver-class-name: com.mysql.jdbc.Driver
   rabbitmq:
@@ -24,7 +24,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://kang:12345@localhost:9000/eureka/
+      defaultZone: http://kang:12345@193.112.58.253:9020/eureka/
 management:
   endpoints:
     web:

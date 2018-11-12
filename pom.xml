@@ -11,9 +11,9 @@
         <module>eureka</module>
         <module>common</module>
         <module>app</module>
-        <module>zuul</module>
         <module>monitor</module>
         <module>service</module>
+        <module>gateway</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -30,6 +30,7 @@
         <java.version>1.8</java.version>
 
         <lombok.version>1.16.20</lombok.version>
+        <swagger2.version>2.9.2</swagger2.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -53,6 +54,16 @@
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
                 <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger2.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

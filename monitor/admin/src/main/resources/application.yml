@@ -1,0 +1,32 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: admin
+  security:
+    user:
+      name: "kang"
+      password: "12345"
+
+# tag::configuration-eureka[]
+eureka:
+  client:
+    service-url:
+      defaultZone: http://kang:12345@193.112.58.253:9020/eureka/
+  instance:
+    health-check-url: /actuator/health
+    metadata-map:
+      startup: ${random.int}
+      user.name: "kang"
+      user.password: "12345"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+# end::configuration-eureka[]
+
+debug: true

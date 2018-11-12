@@ -15,12 +15,13 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://kang:12345@localhost:9000/eureka/
+      defaultZone: http://kang:12345@193.112.58.253:9020/eureka/
 zuul:
   routes:
     user:
-      path: /api/**
+      path: /user/**
       serviceId: user-service
+  prefix: /api
 management:
   endpoints:
     web:
